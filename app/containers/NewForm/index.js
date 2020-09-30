@@ -104,7 +104,7 @@ const NewForm = props => {
 
         {!isResult && (
           <Grid container spacing={2} alignItems="center" alignContent="center">
-            <Grid item xs={4} sm={6} align="center">
+            <Grid item xs={4} sm={6} align="right" style={{paddingRight: '2em'}}>
               <InputLabel htmlFor="uri">URI</InputLabel>
             </Grid>
             <Grid item xs={8} sm={6}>
