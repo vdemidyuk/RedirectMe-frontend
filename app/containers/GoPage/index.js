@@ -33,6 +33,8 @@ import saga from './saga';
 // import messages from './messages';
 import { goAction } from './actions';
 
+import ReactGA from 'react-ga';
+
 export function GoPage(props) {
   useInjectReducer({ key: 'goPage', reducer });
   useInjectSaga({ key: 'goPage', saga });
@@ -48,6 +50,8 @@ export function GoPage(props) {
     ) {
       props.handleGo(decodeURIComponent(props.match.params.goLink));
     }
+
+    ReactGA.pageview(window.location.pathname);
   }, []);
 
   // useEffect(() => {

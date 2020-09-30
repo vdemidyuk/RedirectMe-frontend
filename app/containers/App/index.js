@@ -7,8 +7,10 @@
  *
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Switch, Route } from 'react-router-dom';
+
+import ReactGA from 'react-ga';
 
 import HomePage from 'containers/HomePage/Loadable';
 // import HistoryPage from 'containers/HistoryPage/Loadable';
@@ -17,7 +19,14 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
+
 export default function App() {
+
+  useEffect(() => {
+    ReactGA.initialize(process.env.GA || '');
+    ReactGA.pageview(window.location.pathname);
+  })
+
   return (
     <div>
       <Switch>

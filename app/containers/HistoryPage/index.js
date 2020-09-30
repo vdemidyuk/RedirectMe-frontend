@@ -43,6 +43,8 @@ import {
   resetStorageAction,
 } from './actions';
 
+import ReactGA from 'react-ga';
+
 export const HistoryPage = props => {
   useInjectReducer({ key: 'historyPage', reducer });
   useInjectSaga({ key: 'historyPage', saga });
@@ -53,6 +55,8 @@ export const HistoryPage = props => {
       const links = Lockr.get('links', []);
       props.handleStorageInitializedFlag(links);
     }
+
+    ReactGA.pageview(window.location.pathname);
   }, []);
 
   useEffect(() => {

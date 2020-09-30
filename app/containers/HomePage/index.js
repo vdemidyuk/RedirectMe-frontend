@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react'; // , { useEffect }
+import React,{useEffect} from 'react'; // , { useEffect }
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { FormattedMessage } from 'react-intl';
@@ -30,6 +30,7 @@ import makeSelectHomePage, {
 import reducer from './reducer';
 import saga from './saga';
 // import messages from './messages';
+import ReactGA from 'react-ga';
 
 export const HomePage = props => {
   useInjectReducer({ key: 'homePage', reducer });
@@ -39,6 +40,10 @@ export const HomePage = props => {
     props.dispatch(linkSubmitAction(values));
     return false;
   };
+
+  useEffect(() => {
+    ReactGA.pageview('/homepage');
+  });
 
   const isVisibleHistory =
     (props.location &&

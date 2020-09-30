@@ -116,6 +116,7 @@ module.exports = options => ({
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
       API_BASE_URL: process.env.API_BASE_URL,
+      GA: process.env.GA,
     }),
   ]),
   resolve: {
