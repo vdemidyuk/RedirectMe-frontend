@@ -155,7 +155,7 @@ const Layout = props => {
           <Grid container spacing={4}>
             {children}
           </Grid>
-          <Grid container spacing={4}>
+          {/* <Grid container spacing={4}>
             <Grid item xs={12}></Grid>
             <Grid item xs={12} align="center">
               <Typography variant="h6" color="error">
@@ -165,7 +165,7 @@ const Layout = props => {
                 We've discovered our domain name is in some black lists after purchasing it. We work towards fixing it.
               </Typography>
             </Grid>
-          </Grid>
+          </Grid> */}
         </Container>
       </main>
       <footer className={classes.footer}>
